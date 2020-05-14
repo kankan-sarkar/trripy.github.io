@@ -26,6 +26,7 @@ var WebsiteData= {
         "Post2":{
             "Title":"Something Interesting","link":"document1.html","Author":"Morrison A","PublishDate":"20-07-2020","avatarimage":"images/avatar.jpg", "thumbnail":"images/pic01.jpg" ,"preface":"A knowledge base for Automobile Enthusiasts. This page is devoted to auto motive enthusiasts, who are turned on by the sound of the reviving engine or the smell of molten rubber on the track. Collect all the news around the word in the field of automobile, cars, bike, its' technology and the dynamics of vehicle from our experts in different fields of automobile industry."
         }
+<<<<<<< HEAD
     },
     "Cards":{
         "Card1":{
@@ -62,6 +63,10 @@ var WebsiteData= {
             "Title":"Autonomous Vehicles",
             "Date":"19-09-2020",
             "AuthorIMG":"images/avatar.jpg",
+=======
+        "Post3":{
+            "Title":"Something Interesting2","link":"document1.html","Author":"Morrison A","PublishDate":"20-07-2020","avatarimage":"images/avatar.jpg", "thumbnail":"images/pic01.jpg" ,"preface":"A knowledge base for Automobile Enthusiasts. This page is devoted to auto motive enthusiasts, who are turned on by the sound of the reviving engine or the smell of molten rubber on the track. Collect all the news around the word in the field of automobile, cars, bike, its' technology and the dynamics of vehicle from our experts in different fields of automobile industry."
+>>>>>>> 80678f26199699b87dba684e58bf8f23f98db4dc
         }
     }
 }
