@@ -58,12 +58,7 @@
                 <li><a href="#" class="button large fit">Log In</a></li>
             </ul>
         </section>
-
     </section>
-
-
-
-
 
 
 
@@ -72,9 +67,20 @@
         <!-- Post -->
         <article  class="post">
 
+
+
+
         </article>
 
     </div>
+
+    <section id="sidebar">
+        <section>
+            <div class="mini-posts" id="xyzMINIPOST">
+            </div>
+        </section>
+    </section>
+
 </div>
 
 <!-- Scripts -->
@@ -108,6 +114,14 @@ _temp+='<article class="post"><header><div class="title"><h2>'+value.Title+'</h2
 })
 console.log(_temp)
 $("#main").html(_temp);
+_temp=''
+$.each(WebsiteData.Cards,function (index,value) {
+    _temp+='<article class="mini-post"><header><h3><a href="'+value.link+'">'+value.Title+'</a></h3><time class="published">'+moment().format('MMMM Do YYYY')+'</time><a href="#" class="author"><img src="'+value.AuthorIMG+'" alt="" /></a> </header> <a href="'+value.link+'" class="image"><img src="'+value.Thumbnail+'" alt="" /></a> </article>'
+})
+console.log(_temp)
+$("#xyzMINIPOST").html(_temp);
+
+
 </script>
 </body>
 

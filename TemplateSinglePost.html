@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Blog Name01</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style type="text/css">
+        @page { size: 21.59cm 27.94cm; margin: 2cm }
+        p { margin-bottom: 0.25cm; line-height: 115%; background: transparent }
+        h2 { text-align: justify; background: transparent }
+        h2.western { font-family: "Times New Roman", serif; font-size: 12pt; font-weight: bold }
+        h2.cjk { font-size: 12pt; font-weight: bold }
+        h2.ctl { font-family: "Calibri" }
+    </style>
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1 id="blogname" style="position:center "><a href="index.html"></a></h1>
+        <nav class="links">
+            <ul id="xyzNAVBAR">
+                <!-- Will be populated automatically -->
+            </ul>
+        </nav>
+        <nav class="main">
+            <ul>
+                <li class="search">
+                    <a class="fa-search" href="#search">Search</a>
+                    <form id="search" method="get" action="#">
+                        <input type="text" name="query" placeholder="Search" />
+                    </form>
+                </li>
+                <li class="menu">
+                    <a class="fa-bars" href="#menu">Menu</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu -->
+    <section id="menu">
+
+        <!-- Search -->
+        <section>
+            <form class="search" method="get" action="#">
+                <input type="text" name="query" placeholder="Search" />
+            </form>
+        </section>
+
+        <!-- Links -->
+        <section>
+            <ul class="links" id="xyzSIDEBAR">
+
+            </ul>
+        </section>
+
+        <!-- Actions -->
+        <section>
+            <ul class="actions stacked">
+                <li><a href="#" class="button large fit">Log In</a></li>
+            </ul>
+        </section>
+
+    </section>
+
+
+    <!-- Main -->
+    <div id="main" >
+        <!-- Post -->
+        <article  class="post">
+
+
+
+
+
+        </article>
+
+    </div>
+
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="config.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    console.log(moment("12-05-2020").format('MMMM Do YYYY'))
+    // console.log(WebsiteData.header.)
+    _temp='';
+    $.each(WebsiteData.header,function(index,value){
+        _temp+='<li><a href='+value.link+'>'+value.text+'</a></li>'
+    });
+    $("#xyzNAVBAR").html(_temp);
+    _temp='';
+    $.each(WebsiteData.sidebar,function(index,value){
+        _temp+='<li><a href='+value.link+'><h3>'+value.text+'</h3></a></li>'
+    });
+    $("#xyzSIDEBAR").html(_temp);
+    $("#blogname").text(WebsiteData.BlogName);
+
+    _temp='';
+
+</script>
+</body>
+
+</html>

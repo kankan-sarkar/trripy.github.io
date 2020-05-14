@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Blog Name01</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style type="text/css">
+        @page { size: 21.59cm 27.94cm; margin: 2cm }
+        p { margin-bottom: 0.25cm; line-height: 115%; background: transparent }
+        h2 { text-align: justify; background: transparent }
+        h2.western { font-family: "Times New Roman", serif; font-size: 12pt; font-weight: bold }
+        h2.cjk { font-size: 12pt; font-weight: bold }
+        h2.ctl { font-family: "Calibri" }
+    </style>
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+        <h1 id="blogname" style="position:center "><a href="index.html"></a></h1>
+        <nav class="links">
+            <ul id="xyzNAVBAR">
+                <!-- Will be populated automatically -->
+            </ul>
+        </nav>
+        <nav class="main">
+            <ul>
+                <li class="search">
+                    <a class="fa-search" href="#search">Search</a>
+                    <form id="search" method="get" action="#">
+                        <input type="text" name="query" placeholder="Search" />
+                    </form>
+                </li>
+                <li class="menu">
+                    <a class="fa-bars" href="#menu">Menu</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu -->
+    <section id="menu">
+
+        <!-- Search -->
+        <section>
+            <form class="search" method="get" action="#">
+                <input type="text" name="query" placeholder="Search" />
+            </form>
+        </section>
+
+        <!-- Links -->
+        <section>
+            <ul class="links" id="xyzSIDEBAR">
+
+            </ul>
+        </section>
+
+        <!-- Actions -->
+        <section>
+            <ul class="actions stacked">
+                <li><a href="#" class="button large fit">Log In</a></li>
+            </ul>
+        </section>
+
+    </section>
+
+
+    <!-- Main -->
+    <div id="main" >
+        <!-- Post -->
+        <article  class="post">
+            <p style="margin-top:0pt; margin-left:28.8pt; margin-bottom:0pt; text-indent:-28.8pt; text-align:justify; font-size:12pt;"><strong><span style="font-family:'Times New Roman';">1.1</span></strong><span style="font:7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a name="_Toc34666111"></a><a name="_Toc34616123"><strong><span style="font-family:'Times New Roman';">EKF or Extended Kalman Filter</span></strong></a></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman';">The EKF-SLAM estimates the current pose of the robot instead of estimating the entire trajectory. The EKF-SLAM observes landmarks(objects) in the environment for perception&nbsp;</span><span style="font-family:'Liberation Serif';">(Smith, et al., 1987)</span><span style="font-family:'Times New Roman';">. The principle of the EKF-SLAM is explained below&nbsp;</span><span style="font-family:'Liberation Serif';">(Filbrandt, et al., 2019)</span><span style="font-family:'Times New Roman';">.&nbsp;</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman';">Assumption : The environment is 2D , robot control command is U, Observation =Z , Map of the environment is M and robot path = X</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman';">At any time, T&nbsp;</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman';">the robot control commands would be&nbsp;</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman';">U</span><span style="font-family:'Times New Roman'; font-size:8pt;"><sub>1:T&nbsp;</sub></span><span style="font-family:'Times New Roman';">={U</span><span style="font-family:'Times New Roman'; font-size:8pt;"><sub>1</sub></span><span style="font-family:'Times New Roman';">,U</span><span style="font-family:'Times New Roman'; font-size:8pt;"><sub>2</sub></span><span style="font-family:'Times New Roman';">&hellip;...U</span><span style="font-family:'Times New Roman'; font-size:8pt;"><sub>T</sub></span><span style="font-family:'Times New Roman';">}</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman';">The robot observations:</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman';">Z</span><span style="font-family:'Times New Roman'; font-size:8pt;"><sub>1:T&nbsp;</sub></span><span style="font-family:'Times New Roman';">={Z</span><span style="font-family:'Times New Roman'; font-size:8pt;"><sub>1</sub></span><span style="font-family:'Times New Roman';">,Z</span><span style="font-family:'Times New Roman'; font-size:8pt;"><sub>2</sub></span><span style="font-family:'Times New Roman';">&hellip;...Z</span><span style="font-family:'Times New Roman'; font-size:8pt;"><sub>T</sub></span><span style="font-family:'Times New Roman';">}</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman';">The robot path:</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman';">X</span><span style="font-family:'Times New Roman'; font-size:8pt;"><sub>0:T&nbsp;</sub></span><span style="font-family:'Times New Roman';">={X</span><span style="font-family:'Times New Roman'; font-size:8pt;"><sub>1</sub></span><span style="font-family:'Times New Roman';">,X</span><span style="font-family:'Times New Roman'; font-size:8pt;"><sub>2</sub></span><span style="font-family:'Times New Roman';">&hellip;...X</span><span style="font-family:'Times New Roman'; font-size:8pt;"><sub>T</sub></span><span style="font-family:'Times New Roman';">}</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman';">The State Space representation of the robot in the environment , where m represents the list of landmark positions, x, y are the robot position coordinates and&nbsp;</span><span style="font-family:'Times New Roman'; color:#212529;">&theta; is the orientation.</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:17pt;"><span style="font-family:'Times New Roman'; font-size:12pt;">X</span><span style="font-family:'Times New Roman'; font-size:8pt;"><sub>t</sub></span><span style="font-family:'Times New Roman'; font-size:12pt;">=(x, y,</span><span style="font-family:'Times New Roman'; color:#212529;">&nbsp;</span><span style="font-family:'Times New Roman'; font-size:12pt; color:#212529;">&theta;, m</span><span style="font-family:'Times New Roman'; font-size:8pt; color:#212529;"><sub>1,x</sub></span><span style="font-family:'Times New Roman'; font-size:12pt; color:#212529;">, m</span><span style="font-family:'Times New Roman'; font-size:8pt; color:#212529;"><sub>1,y</sub></span><span style="font-family:'Times New Roman'; font-size:12pt; color:#212529;">, &hellip;&hellip;&hellip; , m</span><span style="font-family:'Times New Roman'; font-size:8pt; color:#212529;"><sub>n,x</sub></span><span style="font-family:'Times New Roman'; font-size:12pt; color:#212529;">, m</span><span style="font-family:'Times New Roman'; font-size:8pt; color:#212529;"><sub>n,y</sub></span><span style="font-family:'Times New Roman'; font-size:12pt; color:#212529;">)</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman'; color:#212529;">The above equation can be broken into pose matrix(</span><span style="font-family:'Times New Roman'; color:#212529;">&mu;) and covariance matrix(</span><span style="font-family:'Times New Roman'; color:#222222; background-color:#ffffff;">&sigma;).</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman'; color:#212529;">Pose matrix(</span><span style="font-family:'Times New Roman'; color:#212529;">&mu;)=[&nbsp;</span><img src="https://myfiles.space/user_files/52144_12ba5e89a94f0b3f/1589210703_untitled-1/1589210703_untitled-1.001.png" width="14" height="34" alt=""><span style="font-family:'Times New Roman'; color:#212529;">&nbsp;</span><span style="font-family:'Times New Roman';">]</span><span style="font-family:'Times New Roman';">where X=(x ,y ,</span><span style="font-family:'Times New Roman'; color:#212529;">&theta;)</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman'; color:#212529;">Covariance matrix(</span><span style="font-family:'Times New Roman'; color:#222222; background-color:#ffffff;">&sigma;)=[</span><span style="font-family:'Times New Roman'; color:#212529;">&nbsp;</span><img src="https://myfiles.space/user_files/52144_12ba5e89a94f0b3f/1589210703_untitled-1/1589210703_untitled-1.002.png" width="69" height="37" alt=""><span style="font-family:'Times New Roman'; color:#212529;">]</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman'; color:#212529;">Here&nbsp;</span><img src="https://myfiles.space/user_files/52144_12ba5e89a94f0b3f/1589210703_untitled-1/1589210703_untitled-1.003.png" width="25" height="20" alt=""><span style="font-family:'Times New Roman'; color:#212529;">&nbsp;relates to the covariance of the pose.</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><img src="https://myfiles.space/user_files/52144_12ba5e89a94f0b3f/1589210703_untitled-1/1589210703_untitled-1.004.png" width="29" height="20" alt=""><span style="font-family:'Times New Roman'; color:#212529;">&nbsp;is the uncertainty of the landmark and their correlation</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><img src="https://myfiles.space/user_files/52144_12ba5e89a94f0b3f/1589210703_untitled-1/1589210703_untitled-1.004.png" width="29" height="20" alt=""><span style="font-family:'Times New Roman'; color:#212529;">&nbsp;,&nbsp;</span><img src="https://myfiles.space/user_files/52144_12ba5e89a94f0b3f/1589210703_untitled-1/1589210703_untitled-1.005.png" width="27" height="20" alt=""><span style="font-family:'Times New Roman'; color:#212529;">&nbsp;is the correlation between the pose and the landmark</span></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman'; color:#212529;">To the above pose and covariance matrix the EKF is applied , its an iterative process and iteration can be subdivided into below fundamental steps . Assumption in the environment there are 2 landmarks as m</span><span style="font-family:'Times New Roman'; font-size:8pt; color:#212529;"><sub>1</sub></span><span style="font-family:'Times New Roman'; color:#212529;">,m</span><span style="font-family:'Times New Roman'; font-size:8pt; color:#212529;"><sub>2</sub></span><span style="font-family:'Times New Roman'; color:#212529;">.</span></p>
+            <p style="margin-top:0pt; margin-left:18pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman'; color:#212529;">a)</span><span style="font:7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Times New Roman'; color:#212529;">Prediction of State: Estimate a new position of the mobile robot given the control input. In this step only the pose vectors are updated in the pose matrix . In the covariance matrix the elements related to the robot&rsquo;s pose are updated (robots pose and the landmark observations). Predictions are expressed in below matrices (highlighted below)</span></p>
+            <ol style="margin:0pt; padding-left:0pt;" type="I">
+                <li style="margin-left:41pt; text-align:justify; padding-left:13pt; font-family:'Times New Roman'; font-size:12pt; color:#212529;">Pose matrix(&mu;)=[<img src="https://myfiles.space/user_files/52144_12ba5e89a94f0b3f/1589210703_untitled-1/1589210703_untitled-1.006.png" width="20" height="53" alt="">]</li>
+                <li style="margin-left:41pt; margin-bottom:10pt; text-align:justify; padding-left:13pt; font-family:'Times New Roman'; font-size:12pt; color:#212529;">Covariance matrix(<span style="color:#222222; background-color:#ffffff;">&sigma;)=</span><img src="https://myfiles.space/user_files/52144_12ba5e89a94f0b3f/1589210703_untitled-1/1589210703_untitled-1.007.png" width="145" height="68" alt=""></li>
+            </ol>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; page-break-after:avoid; font-size:12pt;"><img src="https://myfiles.space/user_files/52144_12ba5e89a94f0b3f/1589210703_untitled-1/1589210703_untitled-1.008.png" width="389" height="216" alt=""></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:9pt;"><a name="_Toc34668662"><em><span style="font-family:'Times New Roman'; color:#1f497d;">Figure&nbsp;</span></em><em><span style="font-family:'Times New Roman'; color:#1f497d;">1</span></em><em><span style="font-family:'Times New Roman'; color:#1f497d;">&nbsp;State Estimate</span></em></a></p>
+            <p style="margin-top:0pt; margin-left:18pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman'; color:#212529;">b)</span><span style="font:7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Times New Roman'; color:#212529;">Measurement Prediction: Given the best estimate of the robot&rsquo;s position(as per previous step) predict the landmark position(highlighted below)</span></p>
+            <ol style="margin:0pt; padding-left:0pt;" type="I">
+                <li style="margin-left:59pt; text-align:justify; padding-left:13pt; font-family:'Times New Roman'; font-size:12pt; color:#212529;">Pose matrix(&mu;)=[<img src="https://myfiles.space/user_files/52144_12ba5e89a94f0b3f/1589210703_untitled-1/1589210703_untitled-1.006.png" width="20" height="53" alt="">]</li>
+                <li style="margin-left:59pt; margin-bottom:10pt; text-align:justify; padding-left:13pt; font-family:'Times New Roman'; font-size:12pt; color:#212529;">Covariance matrix(<span style="color:#222222; background-color:#ffffff;">&sigma;)=</span><img src="https://myfiles.space/user_files/52144_12ba5e89a94f0b3f/1589210703_untitled-1/1589210703_untitled-1.007.png" width="145" height="68" alt=""></li>
+            </ol>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman'; color:#212529;">&nbsp;</span></p>
+            <p style="margin-top:0pt; margin-left:36pt; margin-bottom:10pt; text-align:center; page-break-after:avoid; font-size:12pt;"><img src="https://myfiles.space/user_files/52144_12ba5e89a94f0b3f/1589210703_untitled-1/1589210703_untitled-1.009.png" width="428" height="268" alt=""></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:9pt;"><a name="_Toc34668663"><em><span style="font-family:'Times New Roman'; color:#1f497d;">Figure&nbsp;</span></em><em><span style="font-family:'Times New Roman'; color:#1f497d;">2</span></em><em><span style="font-family:'Times New Roman'; color:#1f497d;">&nbsp;Measurement Estimate</span></em></a></p>
+            <p style="margin-top:0pt; margin-left:36pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman'; color:#212529;">&nbsp;</span></p>
+            <p style="margin-top:0pt; margin-left:18pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman'; color:#212529;">c)</span><span style="font:7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Times New Roman'; color:#212529;">Measurement : Measure the landmarks using sensor (LiDAR, Camera, Radar , Ultrasonic etc.)</span></p>
+            <p style="margin-top:0pt; margin-left:18pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman'; color:#212529;">d)</span><span style="font:7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Times New Roman'; color:#212529;">Data Association: Measurement taken from sensors are associated to respective landmark.</span></p>
+            <p style="margin-top:0pt; margin-left:36pt; margin-bottom:10pt; text-align:center; page-break-after:avoid; font-size:12pt;"><img src="https://myfiles.space/user_files/52144_12ba5e89a94f0b3f/1589210703_untitled-1/1589210703_untitled-1.010.png" width="431" height="256" alt=""></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:9pt;"><a name="_Toc34668664"><em><span style="font-family:'Times New Roman'; color:#1f497d;">Figure&nbsp;</span></em><em><span style="font-family:'Times New Roman'; color:#1f497d;">3</span></em><em><span style="font-family:'Times New Roman'; color:#1f497d;">&nbsp;Data Association</span></em></a></p>
+            <p style="margin-top:0pt; margin-left:18pt; margin-bottom:0pt; text-indent:-18pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman'; color:#212529;">e)</span><span style="font:7pt 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family:'Times New Roman'; color:#212529;">Update : Correct the robot pose and landmark observation(highlighted below)</span></p>
+            <ol style="margin:0pt; padding-left:0pt;" type="I">
+                <li style="margin-left:95pt; text-align:justify; padding-left:13pt; font-family:'Times New Roman'; font-size:12pt; color:#212529;">Pose matrix(&mu;)=[<img src="https://myfiles.space/user_files/52144_12ba5e89a94f0b3f/1589210703_untitled-1/1589210703_untitled-1.006.png" width="20" height="53" alt="">]</li>
+                <li style="margin-left:95pt; margin-bottom:10pt; text-align:justify; padding-left:13pt; font-family:'Times New Roman'; font-size:12pt; color:#212529;">Covariance matrix(<span style="color:#222222; background-color:#ffffff;">&sigma;)=</span><img src="https://myfiles.space/user_files/52144_12ba5e89a94f0b3f/1589210703_untitled-1/1589210703_untitled-1.007.png" width="145" height="68" alt=""></li>
+            </ol>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; page-break-after:avoid; font-size:12pt;"><img src="https://myfiles.space/user_files/52144_12ba5e89a94f0b3f/1589210703_untitled-1/1589210703_untitled-1.011.png" width="423" height="247" alt=""></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:9pt;"><a name="_Toc34668665"><em><span style="font-family:'Times New Roman'; color:#1f497d;">Figure&nbsp;</span></em><em><span style="font-family:'Times New Roman'; color:#1f497d;">4</span></em><em><span style="font-family:'Times New Roman'; color:#1f497d;">&nbsp;Current Error Calculation</span></em></a></p>
+            <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:12pt;"><span style="font-family:'Times New Roman'; color:#212529;">EKF suffers from poor performance for non-linear system and its computationally not efficient , which leads to the next implementation RBPF.</span></p>
+        </article>
+
+    </div>
+
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="config.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    console.log(moment("12-05-2020").format('MMMM Do YYYY'))
+    // console.log(WebsiteData.header.)
+    _temp='';
+    $.each(WebsiteData.header,function(index,value){
+        _temp+='<li><a href='+value.link+'>'+value.text+'</a></li>'
+    });
+    $("#xyzNAVBAR").html(_temp);
+    _temp='';
+    $.each(WebsiteData.sidebar,function(index,value){
+        _temp+='<li><a href='+value.link+'><h3>'+value.text+'</h3></a></li>'
+    });
+    $("#xyzSIDEBAR").html(_temp);
+    $("#blogname").text(WebsiteData.BlogName);
+
+    _temp='';
+
+</script>
+</body>
+
+</html>
